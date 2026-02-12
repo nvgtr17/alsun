@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
     <footer className={`transition-colors duration-300 py-16 border-t ${theme === 'dark' ? 'bg-background-dark text-white border-white/10' : 'bg-gray-100 text-gray-900 border-gray-200'}`}>
       <div className="container mx-auto px-6 text-center">
         <div className="mb-10 flex flex-col items-center">
-          <img src="/logomark.png" alt="Alsun Machinery Logo" className={`h-16 w-auto mb-4 opacity-80 ${theme === 'light' ? 'filter brightness-90' : ''}`} />
+          <img src="logomark.png" alt="Alsun Machinery Logo" className={`h-16 w-auto mb-4 opacity-80 ${theme === 'light' ? 'filter brightness-90' : ''}`} />
           <h3 className={`font-display font-bold tracking-[0.2em] text-sm uppercase ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>Built to Outperform</h3>
         </div>
 

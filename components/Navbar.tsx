@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-3 group">
-          <img src="/logomark.png" alt="Alsun Machinery Logo" className={`h-10 w-auto group-hover:opacity-80 transition-opacity ${theme === 'light' ? 'filter brightness-90' : ''}`} />
+          <img src="logomark.png" alt="Alsun Machinery Logo" className={`h-10 w-auto group-hover:opacity-80 transition-opacity ${theme === 'light' ? 'filter brightness-90' : ''}`} />
           <div className="flex flex-col">
             <span className={`${theme === 'dark' ? 'text-white' : 'text-gray-900'} font-display font-bold tracking-widest text-lg uppercase leading-none`}>Alsun</span>
             <span className="text-[0.6rem] tracking-[0.3em] text-gray-400 uppercase leading-none font-semibold">Machinery</span>

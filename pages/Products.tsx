@@ -82,7 +82,7 @@ const Products: React.FC = () => {
             <ProductCard
               theme={theme}
               id="2-cav-automatic"
-              image="../machine/MACHINE.png"
+              image="machine/MACHINE.png"
               title="2 CAV AUTOMATIC"
               desc="High-performance dual cavity automatic blow molding machine engineered for peak reliability."
               specs={[
@@ -99,7 +99,7 @@ const Products: React.FC = () => {
             <ProductCard
               theme={theme}
               id="4-cav-automatic"
-              image="../machine/MACHINE.png"
+              image="machine/MACHINE.png"
               title="4 CAV AUTOMATIC"
               desc="Quad cavity system optimized for massive industrial production demands."
               specs={[
@@ -133,7 +133,7 @@ const Products: React.FC = () => {
               <SemiAutoCard
                 theme={theme}
                 id="semi-2-cav-auto-drop"
-                image="../machine/SUMO_ALSUN_MACHINE-removebg-preview.png"
+                image="machine/SUMO_ALSUN_MACHINE-removebg-preview.png"
                 title="SEMI 2 CAV AUTO DROP"
                 desc="Dual-cavity system with integrated auto-eject mechanism."
                 specs={[
@@ -149,7 +149,7 @@ const Products: React.FC = () => {
               <SemiAutoCard
                 theme={theme}
                 id="semi-4-cav-auto-drop"
-                image="../machine/SUMO_ALSUN_MACHINE-removebg-preview.png"
+                image="machine/SUMO_ALSUN_MACHINE-removebg-preview.png"
                 title="SEMI 4 CAV AUTO DROP"
                 desc="Quad-cavity semi-auto unit for enhanced operational speed."
                 specs={[
@@ -165,7 +165,7 @@ const Products: React.FC = () => {
               <SemiAutoCard
                 theme={theme}
                 id="semi-auto-jar"
-                image="../machine/SUMO_ALSUN_MACHINE-removebg-preview.png"
+                image="machine/SUMO_ALSUN_MACHINE-removebg-preview.png"
                 title="SEMI AUTO JAR"
                 desc="Wide-mouth jar specialist with reinforced molding pressure."
                 specs={[

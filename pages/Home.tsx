@@ -14,7 +14,7 @@ const Home: React.FC = () => {
           <img
             alt="Industrial Machinery Background"
             className={`w-full h-full object-cover ${theme === 'dark' ? 'opacity-40' : 'opacity-40'}`}
-            src="/bg 1.jpg"
+            src="bg 1.jpg"
           />
           <div className={`absolute inset-0 bg-gradient-to-b from-transparent ${theme === 'dark' ? 'via-background-dark/80 to-background-dark' : 'via-background-light/80 to-background-light'}`}></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
 
         <div className="relative z-10 max-w-5xl mx-auto pt-20">
           <div className="mb-6 flex justify-center">
-            <img src="/logomark.png" alt="Alsun Machinery Logo" className={`h-24 w-auto ${theme === 'light' ? 'filter brightness-90' : ''}`} />
+            <img src="logomark.png" alt="Alsun Machinery Logo" className={`h-24 w-auto ${theme === 'light' ? 'filter brightness-90' : ''}`} />
           </div>
 
           <p className="text-xs tracking-[0.3em] font-semibold text-gray-500 uppercase mb-2 font-display">Alsun Machinery</p>
