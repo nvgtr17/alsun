@@ -12,23 +12,23 @@ const Products: React.FC = () => {
 
       {/* Floating Comparison Bar */}
       {compareIds.length > 0 && (
-        <div className="fixed bottom-12 left-1/2 -translate-x-1/2 z-[100] animate-slide-up">
-          <div className={`flex items-center gap-6 px-8 py-4 rounded-full border backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] ${theme === 'dark' ? 'bg-primary/20 border-primary/40' : 'bg-white/90 border-primary/20 shadow-primary/20'}`}>
+        <div className="fixed bottom-6 md:bottom-12 left-0 w-full px-4 z-[100] animate-slide-up">
+          <div className={`max-w-xl mx-auto flex items-center justify-between md:justify-center gap-4 md:gap-8 px-5 md:px-10 py-4 rounded-3xl border backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] ${theme === 'dark' ? 'bg-primary/20 border-primary/40' : 'bg-white/90 border-primary/20 shadow-primary/20'}`}>
             <div className="flex flex-col">
-              <span className="text-[9px] uppercase font-bold tracking-[0.3em] text-primary">System Comparator</span>
-              <span className={`text-xs font-mono font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{compareIds.length} / 4 NODES ACTIVE</span>
+              <span className="text-[8px] md:text-[9px] uppercase font-bold tracking-[0.3em] text-primary">Comparator</span>
+              <span className={`text-[10px] md:text-xs font-mono font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{compareIds.length} / 4 ACTIVE</span>
             </div>
-            <div className="h-8 w-px bg-primary/20"></div>
-            <div className="flex gap-3">
-              <Link to="/compare" className="bg-primary hover:bg-white hover:text-black text-white px-6 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all shadow-lg shadow-primary/30 active:scale-95">
-                Analyze Matrix
+            <div className="h-8 w-px bg-primary/20 hidden md:block"></div>
+            <div className="flex items-center gap-3">
+              <Link to="/compare" className="bg-primary hover:bg-white hover:text-black text-white px-5 md:px-8 py-3 rounded-2xl text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all shadow-lg shadow-primary/30 active:scale-95">
+                Analyze <span className="hidden md:inline">Matrix</span>
               </Link>
               <button
                 onClick={clearCompare}
-                className={`w-10 h-10 flex items-center justify-center rounded-full border transition-all ${theme === 'dark' ? 'border-white/10 hover:bg-white/10 text-white' : 'border-gray-200 hover:bg-gray-100 text-gray-600'}`}
+                className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-2xl border transition-all ${theme === 'dark' ? 'border-white/10 hover:bg-white/10 text-white' : 'border-gray-200 hover:bg-gray-100 text-gray-600'}`}
                 title="Reset Queue"
               >
-                <span className="material-icons text-lg">layers_clear</span>
+                <span className="material-icons text-lg md:text-xl">layers_clear</span>
               </button>
             </div>
           </div>
@@ -38,21 +38,21 @@ const Products: React.FC = () => {
       {/* Background Decor */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         <div className={`absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]`}></div>
-        <div className="absolute top-[20%] right-[-10%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-[20%] left-[-10%] w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px]"></div>
+        <div className="absolute top-[20%] right-[-10%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-primary/5 rounded-full blur-[80px] md:blur-[120px]"></div>
+        <div className="absolute bottom-[20%] left-[-10%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-blue-500/5 rounded-full blur-[80px] md:blur-[120px]"></div>
       </div>
 
       {/* Hero */}
-      <header className="relative pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden border-b border-white/5">
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <header className="relative pt-24 pb-12 md:pt-48 md:pb-32 overflow-hidden border-b border-white/5">
+        <div className="relative z-10 container-custom text-center">
           <div className="inline-block py-1 px-4 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold tracking-[0.4em] uppercase mb-8 animate-fade-in">
             Engineering Precision
           </div>
-          <h1 className={`text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-8 tracking-tighter leading-none ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-            Industrial Molding <br />
+          <h1 className={`text-fluid-h1 font-display font-bold mb-8 tracking-tighter leading-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+            Industrial Molding <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-indigo-500 font-sans">Ecosystem</span>
           </h1>
-          <p className={`mt-6 max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-gray-500'}`}>
+          <p className={`mt-6 max-w-2xl mx-auto text-base md:text-xl font-light leading-relaxed px-4 ${theme === 'dark' ? 'text-slate-400' : 'text-gray-500'}`}>
             Browse our catalog of high-capacity machinery systems. Select multiple units to compare technical parameters and production throughput.
           </p>
         </div>
@@ -66,19 +66,19 @@ const Products: React.FC = () => {
       <main className="relative z-10 pb-24">
 
         {/* Fully Automatic Series */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <section className="container-custom py-fluid-section">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
             <div>
               <span className="text-primary text-[10px] font-bold tracking-[0.3em] uppercase mb-2 block">Level 01</span>
-              <h2 className={`text-3xl font-display font-bold uppercase tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Automatic Production</h2>
+              <h2 className={`text-fluid-h2 font-display font-bold uppercase tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Automatic Production</h2>
               <div className="w-20 h-1 bg-primary mt-4"></div>
             </div>
-            <p className={`max-w-md text-sm leading-relaxed ${theme === 'dark' ? 'text-slate-500' : 'text-gray-500'}`}>
-              Fully autonomous molding solutions for high-volume consistent output.
+            <p className={`max-w-md text-sm md:text-base leading-relaxed ${theme === 'dark' ? 'text-slate-500' : 'text-gray-400'}`}>
+              Fully autonomous molding solutions for high-volume consistent output and optimized power consumption.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 px-2 md:px-0">
             <ProductCard
               theme={theme}
               id="2-cav-automatic"
@@ -116,20 +116,20 @@ const Products: React.FC = () => {
         </section>
 
         {/* Semi-Automatic Series */}
-        <section className={`py-24 border-y ${theme === 'dark' ? 'bg-white/[0.02] border-white/5' : 'bg-gray-50/50 border-gray-100'}`}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 text-right md:text-left">
-              <div className="order-1 md:order-2">
+        <section className={`py-fluid-section border-y ${theme === 'dark' ? 'bg-white/[0.02] border-white/5' : 'bg-gray-50/50 border-gray-100'}`}>
+          <div className="container-custom">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
+              <div>
                 <span className="text-primary text-[10px] font-bold tracking-[0.3em] uppercase mb-2 block">Level 02</span>
-                <h2 className={`text-3xl font-display font-bold uppercase tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Semi-Automatic Systems</h2>
-                <div className="w-20 h-1 bg-primary mt-4 ml-auto md:ml-0"></div>
+                <h2 className={`text-fluid-h2 font-display font-bold uppercase tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Semi-Automatic Systems</h2>
+                <div className="w-20 h-1 bg-primary mt-4"></div>
               </div>
-              <p className={`max-w-md text-sm leading-relaxed order-2 md:order-1 ${theme === 'dark' ? 'text-slate-500' : 'text-gray-500'}`}>
+              <p className={`max-w-md text-sm md:text-base leading-relaxed ${theme === 'dark' ? 'text-slate-500' : 'text-gray-400'}`}>
                 Flexible production units for specialized container formats and artisanal runs.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-2 md:px-0">
               <SemiAutoCard
                 theme={theme}
                 id="semi-2-cav-auto-drop"
@@ -183,19 +183,19 @@ const Products: React.FC = () => {
         </section>
 
         {/* Feature Highlights */}
-        <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-fluid-section container-custom">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className={`p-10 rounded-3xl border transition-all hover:border-primary/40 ${theme === 'dark' ? 'bg-card-dark/40 border-white/5' : 'bg-white border-gray-100 shadow-xl'}`}>
+            <div className={`p-8 md:p-10 rounded-3xl border transition-all hover:border-primary/40 ${theme === 'dark' ? 'bg-card-dark/40 border-white/5' : 'bg-white border-gray-100 shadow-xl'}`}>
               <span className="material-icons-outlined text-primary text-4xl mb-6">precision_manufacturing</span>
               <h4 className={`text-lg font-bold uppercase tracking-wide mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Heavy Engineering</h4>
               <p className={`text-sm leading-relaxed font-light ${theme === 'dark' ? 'text-slate-400' : 'text-gray-600'}`}>Ultra-rigid square pipe architecture minimizes harmonic vibration for flawless molding precision.</p>
             </div>
-            <div className={`p-10 rounded-3xl border transition-all hover:border-primary/40 ${theme === 'dark' ? 'bg-card-dark/40 border-white/5' : 'bg-white border-gray-100 shadow-xl'}`}>
+            <div className={`p-8 md:p-10 rounded-3xl border transition-all hover:border-primary/40 ${theme === 'dark' ? 'bg-card-dark/40 border-white/5' : 'bg-white border-gray-100 shadow-xl'}`}>
               <span className="material-icons-outlined text-primary text-4xl mb-6">shield</span>
               <h4 className={`text-lg font-bold uppercase tracking-wide mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Operational Guard</h4>
-              <p className={`text-sm leading-relaxed font-light ${theme === 'dark' ? 'text-slate-400' : 'text-gray-600'}`}>Comprehensive 2-year industrial warranty with guaranteed parts availability and 24/7 technical relay.</p>
+              <p className={`text-sm leading-relaxed font-light ${theme === 'dark' ? 'text-slate-400' : 'text-gray-600'}`}>Comprehensive 2-year industrial warranty with guaranteed parts availability and technical support.</p>
             </div>
-            <div className={`p-10 rounded-3xl border transition-all hover:border-primary/40 ${theme === 'dark' ? 'bg-card-dark/40 border-white/5' : 'bg-white border-gray-100 shadow-xl'}`}>
+            <div className={`p-8 md:p-10 rounded-3xl border transition-all hover:border-primary/40 ${theme === 'dark' ? 'bg-card-dark/40 border-white/5' : 'bg-white border-gray-100 shadow-xl'}`}>
               <span className="material-icons-outlined text-primary text-4xl mb-6">bolt</span>
               <h4 className={`text-lg font-bold uppercase tracking-wide mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>High Flux Rate</h4>
               <p className={`text-sm leading-relaxed font-light ${theme === 'dark' ? 'text-slate-400' : 'text-gray-600'}`}>Advanced cycle optimization delivering peak units-per-hour without compromising container integrity.</p>
@@ -206,11 +206,11 @@ const Products: React.FC = () => {
       </main>
 
       {/* Floating CTA */}
-      <a className="fixed bottom-8 right-8 z-50 flex items-center gap-4 bg-primary hover:bg-black text-white px-6 py-4 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.3)] transition-all duration-500 group transform hover:-translate-y-2 hover:shadow-primary/40" href="#">
+      <a className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 flex items-center gap-3 md:gap-4 bg-primary hover:bg-black text-white px-5 md:px-6 py-3 md:py-4 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.3)] transition-all duration-500 group animate-slide-in-right transform hover:-translate-y-2 hover:shadow-primary/40" href="#">
         <span className="material-icons-outlined text-xl group-hover:rotate-12 transition-transform">description</span>
         <div className="flex flex-col text-left">
-          <span className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-80">Full Catalog</span>
-          <span className="text-xs font-bold uppercase tracking-wider">Download PDF</span>
+          <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] opacity-80">Catalog</span>
+          <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider">Download</span>
         </div>
       </a>
 
@@ -223,45 +223,45 @@ const Products: React.FC = () => {
 const ProductCard = ({ id, image, title, desc, specs, theme, addToCompare, removeFromCompare, isInCompare }: any) => {
   return (
     <div className="group block relative">
-      <div className={`absolute -inset-1 rounded-3xl blur-xl opacity-0 transition-opacity duration-700 group-hover:opacity-10 bg-gradient-to-r from-primary to-blue-500`}></div>
-      <div className={`relative h-full rounded-2xl overflow-hidden border transition-all duration-500 ${theme === 'dark' ? 'bg-card-dark/40 border-white/5 group-hover:border-primary/30' : 'bg-white border-gray-100 shadow-xl'}`}>
+      <div className={`absolute -inset-1 rounded-[2rem] blur-xl opacity-0 transition-opacity duration-700 group-hover:opacity-10 bg-gradient-to-r from-primary to-blue-500`}></div>
+      <div className={`relative h-full rounded-[2rem] overflow-hidden border transition-all duration-500 ${theme === 'dark' ? 'bg-card-dark/40 border-white/5 group-hover:border-primary/30' : 'bg-white border-gray-100 shadow-xl shadow-gray-200/50 group-hover:border-primary/30'}`}>
 
         {/* Compare Bar Top */}
         <button
           onClick={() => isInCompare ? removeFromCompare(id) : addToCompare(id)}
-          className={`w-full py-3 px-4 border-b text-[10px] font-bold uppercase tracking-[0.2em] flex items-center justify-between transition-all ${isInCompare
+          className={`w-full py-3.5 px-6 border-b text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] flex items-center justify-between transition-all ${isInCompare
             ? 'bg-primary border-primary text-white'
             : `${theme === 'dark' ? 'bg-white/5 border-white/5 text-slate-400 hover:bg-primary/20 hover:text-white' : 'bg-gray-50 border-gray-100 text-gray-500 hover:bg-primary/5 hover:text-primary'}`
             }`}
         >
           <span className="flex items-center gap-2">
             <span className="material-icons text-sm">{isInCompare ? 'check_circle' : 'add_circle_outline'}</span>
-            {isInCompare ? 'ACTIVE IN ANALYSIS QUEUE' : 'COMPARE PRODUCT'}
+            {isInCompare ? 'ACTIVE IN MATRIX' : 'ADD TO COMPARE'}
           </span>
           {isInCompare && <span className="material-icons text-sm hover:rotate-90 transition-transform">close</span>}
         </button>
 
-        <div className={`h-64 relative overflow-hidden flex items-center justify-center p-8 ${theme === 'dark' ? 'bg-black/20' : 'bg-gray-50/50'}`}>
-          <img alt={title} className="max-h-full object-contain drop-shadow-2xl transition-transform duration-700 group-hover:scale-105" src={image} />
-          <div className="absolute top-6 right-6 bg-primary/10 text-primary text-[10px] font-bold px-3 py-1 rounded-full border border-primary/20 tracking-widest uppercase">Series A</div>
+        <div className={`h-56 md:h-72 relative overflow-hidden flex items-center justify-center p-6 md:p-12 ${theme === 'dark' ? 'bg-black/20' : 'bg-gray-50/50'}`}>
+          <img alt={title} className="max-h-full object-contain drop-shadow-2xl transition-transform duration-700 group-hover:scale-110" src={image} />
+          <div className="absolute top-4 right-4 md:top-6 md:right-6 bg-primary/10 text-primary text-[8px] md:text-[10px] font-bold px-3 py-1.5 rounded-xl border border-primary/20 tracking-widest uppercase backdrop-blur-sm">Series A</div>
         </div>
 
-        <div className="p-8">
-          <h3 className={`text-2xl font-display font-bold mb-3 tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{title}</h3>
-          <p className={`text-sm mb-8 font-light leading-relaxed line-clamp-2 ${theme === 'dark' ? 'text-slate-400' : 'text-gray-500'}`}>{desc}</p>
-          <div className="grid grid-cols-2 gap-6 mb-8">
+        <div className="p-6 md:p-10">
+          <h3 className={`text-xl md:text-3xl font-display font-bold mb-4 tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{title}</h3>
+          <p className={`text-xs md:text-sm mb-8 font-light leading-relaxed line-clamp-2 ${theme === 'dark' ? 'text-slate-400' : 'text-gray-500'}`}>{desc}</p>
+          <div className="grid grid-cols-2 gap-4 md:gap-8 mb-8">
             {specs.map((s: any, i: number) => (
               <div key={i} className="flex flex-col">
-                <span className="text-[10px] text-slate-500 uppercase tracking-[0.2em] font-bold mb-1">{s.label}</span>
-                <div className={`flex items-center font-display text-sm ${theme === 'dark' ? 'text-slate-300' : 'text-gray-700'}`}>
-                  <span className="material-icons-outlined text-primary text-base mr-2">{s.icon}</span>
+                <span className="text-[8px] md:text-[9px] text-slate-500 uppercase tracking-[0.2em] font-bold mb-1.5">{s.label}</span>
+                <div className={`flex items-center font-display text-xs md:text-base ${theme === 'dark' ? 'text-slate-300' : 'text-gray-700'}`}>
+                  <span className="material-icons-outlined text-primary text-sm md:text-lg mr-2">{s.icon}</span>
                   {s.val}
                 </div>
               </div>
             ))}
           </div>
-          <Link to={`/products/${id}`} className={`w-full py-4 rounded-xl text-[10px] font-bold uppercase tracking-[0.3em] transition-all flex items-center justify-center gap-2 border ${theme === 'dark' ? 'bg-white/5 border-white/10 text-white hover:bg-primary hover:border-primary' : 'bg-gray-900 border-gray-900 text-white hover:bg-primary hover:border-primary'}`}>
-            Explore Machine Matrix <span className="material-icons text-sm">arrow_forward</span>
+          <Link to={`/products/${id}`} className={`w-full py-4.5 rounded-2xl text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] transition-all flex items-center justify-center gap-2 border shadow-lg active:scale-95 ${theme === 'dark' ? 'bg-white/5 border-white/10 text-white hover:bg-white hover:text-black shadow-black/20' : 'bg-gray-900 border-gray-900 text-white hover:bg-primary hover:border-primary shadow-primary/10'}`}>
+            Explore Machine Matrix <span className="material-icons text-sm md:text-base">arrow_forward</span>
           </Link>
         </div>
       </div>
@@ -272,38 +272,40 @@ const ProductCard = ({ id, image, title, desc, specs, theme, addToCompare, remov
 const SemiAutoCard = ({ id, image, title, desc, specs, theme, addToCompare, removeFromCompare, isInCompare }: any) => {
   return (
     <div className="group block relative">
-      <div className={`relative h-full rounded-2xl overflow-hidden border transition-all duration-500 ${theme === 'dark' ? 'bg-card-dark/40 border-white/5 hover:border-primary/20' : 'bg-white border-gray-100 shadow-lg'}`}>
+      <div className={`relative h-full rounded-[2rem] overflow-hidden border transition-all duration-500 ${theme === 'dark' ? 'bg-card-dark/40 border-white/5 hover:border-primary/20' : 'bg-white border-gray-100 shadow-xl shadow-gray-200/50 group-hover:border-primary/20'}`}>
 
         {/* Compare Bar Top */}
         <button
           onClick={() => isInCompare ? removeFromCompare(id) : addToCompare(id)}
-          className={`w-full py-2.5 px-4 border-b text-[9px] font-bold uppercase tracking-[0.2em] flex items-center justify-between transition-all ${isInCompare
+          className={`w-full py-3 px-5 border-b text-[8px] md:text-[9px] font-bold uppercase tracking-[0.3em] flex items-center justify-between transition-all ${isInCompare
             ? 'bg-primary border-primary text-white'
             : `${theme === 'dark' ? 'bg-white/5 border-white/5 text-slate-500 hover:bg-primary/20 hover:text-white' : 'bg-gray-50 border-gray-100 text-gray-400 hover:bg-primary/5 hover:text-primary'}`
             }`}
         >
           <span className="flex items-center gap-2">
-            <span className="material-icons text-[12px]">{isInCompare ? 'check' : 'add'}</span>
-            {isInCompare ? 'QUEUED' : 'COMPARE PRODUCT'}
+            <span className="material-icons text-[14px]">{isInCompare ? 'check' : 'add'}</span>
+            {isInCompare ? 'IN COMPARE' : 'ADD TO COMPARE'}
           </span>
         </button>
 
-        <div className={`h-48 relative overflow-hidden flex items-center justify-center p-6 ${theme === 'dark' ? 'bg-black/20' : 'bg-gray-50'}`}>
-          <img alt={title} className="max-h-full object-contain drop-shadow-lg transition-transform duration-700 group-hover:scale-105" src={image} />
-          <div className="absolute bottom-4 left-4 text-[9px] font-bold px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded uppercase tracking-widest">S-System</div>
+        <div className={`h-48 md:h-56 relative overflow-hidden flex items-center justify-center p-6 md:p-8 ${theme === 'dark' ? 'bg-black/20' : 'bg-gray-50/50'}`}>
+          <img alt={title} className="max-h-full object-contain drop-shadow-lg transition-transform duration-700 group-hover:rotate-6 group-hover:scale-110" src={image} />
+          <div className="absolute bottom-4 left-4 text-[8px] md:text-[10px] font-bold px-2.5 py-1 bg-primary/10 text-primary border border-primary/20 rounded-lg uppercase tracking-widest backdrop-blur-sm">S-System</div>
         </div>
-        <div className="p-6">
-          <h3 className={`text-lg font-bold mb-2 tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{title}</h3>
-          <p className={`text-xs mb-6 font-light line-clamp-2 ${theme === 'dark' ? 'text-slate-400' : 'text-gray-500'}`}>{desc}</p>
-          <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
+        <div className="p-6 md:p-8">
+          <h3 className={`text-lg md:text-xl font-display font-bold mb-2.5 tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{title}</h3>
+          <p className={`text-[11px] md:text-xs mb-6 font-light line-clamp-2 leading-relaxed ${theme === 'dark' ? 'text-slate-400' : 'text-gray-500'}`}>{desc}</p>
+          <div className="grid grid-cols-2 gap-4 md:gap-6 pt-5 border-t border-white/5">
             {specs.map(([label, val]: string[], i: number) => (
-              <div key={i}>
-                <span className="text-[9px] text-slate-500 uppercase font-bold tracking-widest block mb-1">{label}</span>
-                <span className={`font-mono text-xs ${theme === 'dark' ? 'text-slate-300' : 'text-gray-700'}`}>{val}</span>
+              <div key={i} className="flex flex-col">
+                <span className="text-[8px] text-slate-500 uppercase font-bold tracking-[0.2em] mb-1.5">{label}</span>
+                <span className={`font-mono text-[10px] md:text-xs font-bold ${theme === 'dark' ? 'text-slate-300' : 'text-gray-700'}`}>{val}</span>
               </div>
             ))}
           </div>
-          <Link to={`/products/${id}`} className="mt-4 block text-[9px] font-bold uppercase tracking-widest text-primary hover:underline">View Matrix</Link>
+          <Link to={`/products/${id}`} className="mt-6 inline-flex items-center gap-2 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] text-primary hover:gap-4 transition-all">
+            View Matrix <span className="material-icons text-sm">east</span>
+          </Link>
         </div>
       </div>
     </div>

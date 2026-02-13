@@ -46,55 +46,99 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className={navClass}>
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="container-custom flex justify-between items-center h-full">
         {/* Logo */}
-        <Link to="/" className="flex items-center space-x-3 group">
-          <img src="logomark.png" alt="Alsun Machinery Logo" className={`h-10 w-auto group-hover:opacity-80 transition-opacity ${theme === 'light' ? 'filter brightness-90' : ''}`} />
+        <Link to="/" className="flex items-center space-x-2 md:space-x-3 group relative z-[60]">
+          <img src="logomark.png" alt="Alsun Machinery Logo" className={`h-8 w-auto md:h-10 group-hover:opacity-80 transition-all ${theme === 'light' ? 'filter brightness-90' : ''}`} />
           <div className="flex flex-col">
-            <span className={`${theme === 'dark' ? 'text-white' : 'text-gray-900'} font-display font-bold tracking-widest text-lg uppercase leading-none`}>Alsun</span>
-            <span className="text-[0.6rem] tracking-[0.3em] text-gray-400 uppercase leading-none font-semibold">Machinery</span>
+            <span className={`${theme === 'dark' ? 'text-white' : 'text-gray-900'} font-display font-bold tracking-widest text-base md:text-lg uppercase leading-none`}>Alsun</span>
+            <span className="text-[0.5rem] md:text-[0.6rem] tracking-[0.3em] text-gray-400 uppercase leading-none font-semibold">Machinery</span>
           </div>
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
           <NavLink to="/" label="Home" />
           <NavLink to="/products" label="Products" />
           <NavLink to="/compare" label="Compare" badge={compareIds.length} />
           <NavLink to="/services" label="Services" />
           <NavLink to="/contact" label="Contact" />
 
-          <div className="flex items-center border-l pl-8 border-gray-700">
-            <Link to="/contact" className={`border ${theme === 'dark' ? 'border-white/30 text-white hover:bg-white hover:text-black' : 'border-primary text-primary hover:bg-primary hover:text-white'} px-6 py-2 text-xs font-bold uppercase tracking-wider transition-all rounded-sm`}>
+          <div className="flex items-center border-l pl-6 lg:pl-8 border-gray-700">
+            <Link to="/contact" className={`border ${theme === 'dark' ? 'border-white/30 text-white hover:bg-white hover:text-black' : 'border-primary text-primary hover:bg-primary hover:text-white'} px-4 lg:px-6 py-2 text-[10px] lg:text-xs font-bold uppercase tracking-wider transition-all rounded-sm`}>
               Get Quote
             </Link>
           </div>
         </div>
 
         {/* Mobile Toggle */}
-        <div className="flex items-center space-x-2 md:hidden">
+        <div className="flex items-center space-x-4 md:hidden relative z-[60]">
+          {compareIds.length > 0 && (
+            <Link to="/compare" className="relative group">
+              <span className="material-icons text-primary text-xl">layers</span>
+              <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[8px] font-bold text-white shadow-lg">
+                {compareIds.length}
+              </span>
+            </Link>
+          )}
           <button
-            className={`${theme === 'dark' ? 'text-white' : 'text-gray-900'} p-2`}
+            className={`${theme === 'dark' ? 'text-white' : 'text-gray-900'} p-1 transition-transform active:scale-90`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle Menu"
           >
-            <span className="material-icons">{isMobileMenuOpen ? 'close' : 'menu'}</span>
+            <span className="material-icons text-2xl">{isMobileMenuOpen ? 'close' : 'menu'}</span>
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className={`md:hidden absolute top-full left-0 w-full ${theme === 'dark' ? 'bg-background-dark border-white/10' : 'bg-background-light border-gray-200'} border-b p-6 flex flex-col space-y-4 shadow-2xl`}>
-          <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} hover:text-primary uppercase font-bold text-sm`}>Home</Link>
-          <Link to="/products" onClick={() => setIsMobileMenuOpen(false)} className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} hover:text-primary uppercase font-bold text-sm`}>Products</Link>
-          <Link to="/compare" onClick={() => setIsMobileMenuOpen(false)} className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} hover:text-primary uppercase font-bold text-sm flex items-center gap-2`}>
-            Compare {compareIds.length > 0 && <span className="bg-primary text-white text-[10px] px-2 py-0.5 rounded-full">{compareIds.length}</span>}
-          </Link>
-          <Link to="/services" onClick={() => setIsMobileMenuOpen(false)} className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} hover:text-primary uppercase font-bold text-sm`}>Services</Link>
-          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} hover:text-primary uppercase font-bold text-sm`}>Contact</Link>
-          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="bg-primary text-white text-center py-3 uppercase font-bold text-sm rounded-sm">Get Quote</Link>
+      {/* Mobile Menu Overlay */}
+      <div className={`md:hidden fixed inset-0 z-50 transition-all duration-500 ease-in-out ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+        <div className={`absolute inset-0 ${theme === 'dark' ? 'bg-background-dark/95' : 'bg-background-light/95'} backdrop-blur-xl shadow-2xl`}></div>
+
+        <div className={`relative h-full flex flex-col p-8 pt-24 space-y-4 transform transition-transform duration-500 ease-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className="flex flex-col space-y-1">
+            <span className="text-[10px] font-bold text-primary tracking-[0.3em] uppercase mb-4">Navigation</span>
+            {[
+              { to: "/", label: "Home", icon: "home" },
+              { to: "/products", label: "Products", icon: "inventory_2" },
+              { to: "/compare", label: "Compare Matrix", icon: "analytics", badge: compareIds.length },
+              { to: "/services", label: "Our Services", icon: "support_agent" },
+              { to: "/contact", label: "Contact Us", icon: "email" },
+            ].map((link, idx) => (
+              <Link
+                key={idx}
+                to={link.to}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`flex items-center justify-between p-4 rounded-xl border transition-all ${theme === 'dark' ? 'bg-white/5 border-white/5 text-gray-300' : 'bg-gray-100 border-gray-200 text-gray-700'}`}
+              >
+                <div className="flex items-center gap-4">
+                  <span className="material-icons text-primary opacity-60">{link.icon}</span>
+                  <span className="uppercase font-bold text-xs tracking-widest">{link.label}</span>
+                </div>
+                {link.badge !== undefined && link.badge > 0 && (
+                  <span className="bg-primary text-white text-[10px] px-2 py-0.5 rounded-full">{link.badge}</span>
+                )}
+                <span className="material-icons text-xs opacity-30">chevron_right</span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="pt-8">
+            <Link
+              to="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="w-full bg-primary hover:bg-primary-dark text-white flex items-center justify-center gap-3 py-4 uppercase font-bold text-xs tracking-[0.2em] rounded-xl shadow-lg shadow-primary/20"
+            >
+              <span className="material-icons text-sm">assignment</span>
+              Get Technical Quote
+            </Link>
+          </div>
+
+          <div className="mt-auto pt-8 border-t border-gray-700/20 text-center">
+            <p className="text-[10px] text-gray-500 uppercase tracking-widest">© 2026 Alsun Machinery</p>
+          </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
