@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
       <header className={`w-full py-8 border-b transition-colors ${theme === 'dark' ? 'border-gray-800 bg-background-dark' : 'border-gray-200 bg-white'}`}>
         <div className="container mx-auto px-6 flex justify-center">
           <div className="text-center">
-            <img src="/logomark.png" alt="Alsun Machinery Logo" className={`w-16 h-16 mx-auto mb-3 object-contain ${theme === 'light' ? 'filter brightness-90' : ''}`} />
+            <img src="/alsun/logomark.png" alt="Alsun Machinery Logo" className={`w-16 h-16 mx-auto mb-3 object-contain ${theme === 'light' ? 'filter brightness-90' : ''}`} />
             <h1 className={`text-sm font-bold tracking-[0.3em] uppercase ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Alsun Machinery</h1>
           </div>
         </div>

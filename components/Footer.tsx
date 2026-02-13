@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         <div className="mb-12 flex flex-col items-center">
           <div className="relative mb-6">
             <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full scale-110"></div>
-            <img src="logomark.png" alt="Alsun Machinery Logo" className={`relative h-20 w-auto opacity-100 ${theme === 'light' ? 'filter grayscale brightness-50' : ''}`} />
+            <img src="/alsun/logomark.png" alt="Alsun Machinery Logo" className={`relative h-20 w-auto opacity-100 ${theme === 'light' ? 'filter grayscale brightness-50' : ''}`} />
           </div>
           <h3 className={`font-display font-bold tracking-[0.4em] text-[10px] md:text-sm uppercase ${theme === 'dark' ? 'text-primary' : 'text-primary'}`}>
             Built to Outperform

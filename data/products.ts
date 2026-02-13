@@ -1,7 +1,7 @@
 export const productsData: Record<string, any> = {
     '2-cav-automatic': {
         title: '2 CAV AUTOMATIC',
-        image: 'machine/MACHINE.png',
+        image: '/alsun/machine/MACHINE.png',
         type: 'Fully Automatic',
         desc: 'High-performance dual cavity automatic blow molding machine designed for consistent production of PET bottles up to 1000ml.',
         specs: [
@@ -41,7 +41,7 @@ export const productsData: Record<string, any> = {
     },
     '4-cav-automatic': {
         title: '4 CAV AUTOMATIC',
-        image: 'machine/MACHINE.png',
+        image: '/alsun/machine/MACHINE.png',
         type: 'Fully Automatic',
         desc: 'Quad cavity system designed for high volume automated production, delivering up to 4800 bottles per hour.',
         specs: [
@@ -81,7 +81,7 @@ export const productsData: Record<string, any> = {
     },
     'semi-2-cav-auto-drop': {
         title: 'SEMI 2 CAV AUTO DROP',
-        image: 'machine/SUMO_ALSUN_MACHINE-removebg-preview.png',
+        image: '/alsun/machine/SUMO_ALSUN_MACHINE-removebg-preview.png',
         type: 'Semi-Automatic',
         desc: 'Reliable 2-cavity semi-automatic machine with auto drop feature for efficient bottle ejection.',
         specs: [
@@ -121,7 +121,7 @@ export const productsData: Record<string, any> = {
     },
     'semi-4-cav-auto-drop': {
         title: 'SEMI 4 CAV AUTO DROP',
-        image: 'machine/SUMO_ALSUN_MACHINE-removebg-preview.png',
+        image: '/alsun/machine/SUMO_ALSUN_MACHINE-removebg-preview.png',
         type: 'Semi-Automatic',
         desc: 'Efficient 4-cavity semi-auto system designed for increased throughput with auto drop convenience.',
         specs: [
@@ -161,7 +161,7 @@ export const productsData: Record<string, any> = {
     },
     'semi-auto-jar': {
         title: 'SEMI AUTO JAR',
-        image: 'machine/SUMO_ALSUN_MACHINE-removebg-preview.png',
+        image: '/alsun/machine/SUMO_ALSUN_MACHINE-removebg-preview.png',
         type: 'Semi-Automatic',
         desc: 'Specialized semi-automatic machine designed specifically for wide-mouth jar production.',
         specs: [

@@ -14,7 +14,7 @@ const Home: React.FC = () => {
           <img
             alt="Industrial Machinery Background"
             className={`w-full h-full object-cover ${theme === 'dark' ? 'opacity-30' : 'opacity-20'}`}
-            src="bg 1.jpg"
+            src="/alsun/bg-1.jpg"
           />
           <div className={`absolute inset-0 bg-gradient-to-b from-transparent ${theme === 'dark' ? 'via-background-dark/80 to-background-dark' : 'via-background-light/80 to-background-light'}`}></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
 
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="mb-4 flex justify-center">
-            <img src="logomark.png" alt="Alsun Machinery Logo" className={`h-16 md:h-24 w-auto animate-float ${theme === 'light' ? 'filter brightness-90' : ''}`} />
+            <img src="/alsun/logomark.png" alt="Alsun Machinery Logo" className={`h-16 md:h-24 w-auto animate-float ${theme === 'light' ? 'filter brightness-90' : ''}`} />
           </div>
 
           <p className="text-[10px] md:text-xs tracking-[0.3em] font-semibold text-gray-500 uppercase mb-2 font-display">Alsun Machinery</p>
@@ -118,7 +118,7 @@ const Home: React.FC = () => {
                 <img
                   alt="Semi Automatic Machine Wireframe"
                   className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500`}
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDff3FKlQqvBwLXghUFsm7UuCMMc_Pn-kerNz8PGOxr1ggBzjNPllYnw7DV-2BzNTLG7e5q5dk1m63-ljyCfj-rmarXdG7vQoysZdXMXJGSEwpQHyD7aChLTkuWE8WMKYHtskRuUKZTWDdItlvwOzbu5clDauvkVpoogAazDZgbcqhNWs71V_3lforRD2STHD-ba-Z_q3NXmgt5TLEH1ZQH4hNmQjfCWq4hR_JFi1Gn86vdwBmpmPuesTM_CjET_YVGaEtpL0DOpD8"
+                  src="/alsun/machine/SUMO_ALSUN_MACHINE-removebg-preview.png"
                 />
                 <div className={`absolute z-10 bottom-6 left-6 px-4 py-2 border backdrop-blur-md rounded-xl ${theme === 'dark' ? 'border-white/20 bg-background-dark/60 text-white' : 'border-gray-200 bg-white/60 text-gray-900'}`}>
                   <span className="font-display text-sm tracking-wider uppercase font-bold">Semi-Auto Series</span>
@@ -141,7 +141,7 @@ const Home: React.FC = () => {
                 <img
                   alt="Automatic Machine Wireframe"
                   className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500`}
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwHj_YEXLgEHUCQFptc7XsHqgdhRXH05eOGOHnQfKDQ-OQlt7a0Pay3suwaJiNkqxAhWYGnETzz5fSrF8vn6zFzn9RD9UMU3odAWLGM7nn1ahZlb6jWMMSh6vDA-84WC_pIiPJBFdQ4rBWjN47M4fgQOGd0m6R7yr4tNDSWkuQZpU3vynajGGk5JEA1dsZjD3vRIIlADIB-9bq4Nsb8b4rjV7pMRpWDsCfdBrxpM_TbK_BJkKfKOAxswBxm-U6FJaOqYO46yv49Iw6"
+                  src="/alsun/machine/MACHINE.png"
                 />
                 <div className={`absolute z-10 bottom-6 left-6 px-4 py-2 border backdrop-blur-md rounded-xl ${theme === 'dark' ? 'border-white/20 bg-background-dark/60 text-white' : 'border-gray-200 bg-white/60 text-gray-900'}`}>
                   <span className="font-display text-sm tracking-wider uppercase font-bold">Fully-Auto Series</span>
