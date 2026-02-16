@@ -36,12 +36,7 @@ const Compare: React.FC = () => {
     return (
         <div className={`min-h-screen transition-colors duration-500 antialiased font-sans pt-20 ${theme === 'dark' ? 'bg-background-dark text-slate-200' : 'bg-background-light text-text-light'}`}>
 
-            {/* Background Decor */}
-            <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-                <div className={`absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]`}></div>
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]"></div>
-                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px]"></div>
-            </div>
+
 
             <div className="relative z-10">
                 <div className="container-custom py-4">
@@ -53,19 +48,19 @@ const Compare: React.FC = () => {
 
                 <header className="container-custom py-8 text-center">
                     <span className="inline-block py-1.5 px-4 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold tracking-[0.4em] uppercase mb-6">
-                        Technical Benchmarking
+                        Technical Comparison
                     </span>
                     <h1 className={`text-fluid-h1 font-display font-bold mb-6 tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                        System Comparison Matrix
+                        Machine Comparison Table
                     </h1>
                     <p className={`max-w-xl mx-auto text-sm md:text-base font-light mb-12 px-4 ${theme === 'dark' ? 'text-slate-400' : 'text-gray-500'}`}>
-                        Side-by-side engineering analysis of production throughput, thermal load, and mechanical parameters.
+                        Detailed technical analysis of production throughput, thermal load, and mechanical parameters.
                     </p>
 
                     {/* Quick Add Machines Bar */}
                     {availableProducts.length > 0 && (
                         <div className="mb-12">
-                            <h3 className={`text-[10px] font-bold uppercase tracking-[0.3em] text-primary mb-8 px-4`}>Inject Additional Node to Matrix</h3>
+                            <h3 className={`text-[10px] font-bold uppercase tracking-[0.3em] text-primary mb-8 px-4`}>Add Machine to Comparison</h3>
                             <div className="flex flex-wrap justify-center gap-4 px-4">
                                 {availableProducts.map(p => (
                                     <button
@@ -88,7 +83,7 @@ const Compare: React.FC = () => {
                                 ))}
                             </div>
                             {compareIds.length >= MAX_MACHINES && (
-                                <p className="text-[10px] uppercase font-bold tracking-widest text-primary mt-6">Matrix capacity reached ({MAX_MACHINES}/{MAX_MACHINES})</p>
+                                <p className="text-[10px] uppercase font-bold tracking-widest text-primary mt-6">Maximum machine limit reached ({MAX_MACHINES}/{MAX_MACHINES})</p>
                             )}
                         </div>
                     )}
@@ -99,8 +94,8 @@ const Compare: React.FC = () => {
                         <div className={`inline-flex items-center justify-center w-24 h-24 rounded-[2.5rem] mb-8 border rotate-45 hover:rotate-0 transition-transform duration-500 ${theme === 'dark' ? 'bg-white/5 border-white/10 text-primary' : 'bg-gray-50 border-gray-100 text-primary shadow-xl shadow-primary/5'}`}>
                             <span className="material-icons text-4xl -rotate-45">analytics</span>
                         </div>
-                        <h2 className={`text-2xl font-display font-bold mb-4 uppercase ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Matrix Empty</h2>
-                        <p className={`mb-10 text-sm md:text-base max-w-md mx-auto ${theme === 'dark' ? 'text-slate-500' : 'text-gray-500'}`}>Select up to {MAX_MACHINES} industrial units from the selection above to initialize technical benchmarking.</p>
+                        <h2 className={`text-2xl font-display font-bold mb-4 uppercase ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Comparison Empty</h2>
+                        <p className={`mb-10 text-sm md:text-base max-w-md mx-auto ${theme === 'dark' ? 'text-slate-500' : 'text-gray-500'}`}>Select up to {MAX_MACHINES} machines from the list above to start the technical comparison.</p>
                         <Link to="/products" className="inline-block bg-primary text-white px-10 py-4 rounded-2xl text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-black transition-all shadow-xl shadow-primary/20 active:scale-95">
                             Browse Inventory
                         </Link>
@@ -112,7 +107,7 @@ const Compare: React.FC = () => {
                             <span className="text-[10px] font-bold uppercase tracking-widest text-gray-500">Live Comparison ({selectedProducts.length}/{MAX_MACHINES})</span>
                             <button onClick={clearCompare} className={`flex items-center gap-2 px-6 py-3 rounded-xl border text-[10px] font-bold uppercase tracking-widest transition-all active:scale-95 ${theme === 'dark' ? 'border-primary/20 text-primary hover:bg-primary/5' : 'border-gray-200 text-gray-500 hover:bg-gray-50 shadow-sm'}`}>
                                 <span className="material-icons text-sm">delete_sweep</span>
-                                Reset Matrix
+                                Reset Comparison
                             </button>
                         </div>
 
@@ -124,8 +119,8 @@ const Compare: React.FC = () => {
                                         <tr className={`${theme === 'dark' ? 'bg-black/60' : 'bg-gray-50'}`}>
                                             <th className={`py-6 px-8 text-left w-1/5 min-w-[220px] border-r ${theme === 'dark' ? 'bg-black/80 border-white/5' : 'bg-gray-100 border-gray-100'}`}>
                                                 <div className="flex flex-col">
-                                                    <span className="text-[10px] uppercase font-bold tracking-[0.4em] text-primary mb-1">DATA_POINT</span>
-                                                    <span className={`text-[12px] font-bold uppercase tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>System Key</span>
+                                                    <span className="text-[10px] uppercase font-bold tracking-[0.4em] text-primary mb-1">Specification</span>
+                                                    <span className={`text-[12px] font-bold uppercase tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Technical Key</span>
                                                 </div>
                                             </th>
                                             {selectedProducts.map(p => (
@@ -144,7 +139,7 @@ const Compare: React.FC = () => {
                                                             </div>
                                                             <div className="flex flex-col min-w-0">
                                                                 <h4 className={`text-[11px] font-bold uppercase tracking-tight leading-none mb-1.5 truncate ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{p.title}</h4>
-                                                                <span className="text-[8px] font-bold text-primary uppercase tracking-[0.3em] group-hover/link:underline">Inspect Node</span>
+                                                                <span className="text-[8px] font-bold text-primary uppercase tracking-[0.3em] group-hover/link:underline">View Product</span>
                                                             </div>
                                                         </Link>
                                                     </div>
@@ -157,7 +152,7 @@ const Compare: React.FC = () => {
                                                             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                                                             className={`w-full flex items-center justify-between gap-4 px-6 py-4 rounded-2xl border text-[10px] font-bold uppercase tracking-[0.2em] transition-all ${theme === 'dark' ? 'bg-white/5 border-white/10 text-white hover:bg-white/10' : 'bg-white border-gray-200 text-gray-900 hover:bg-gray-50 shadow-sm'}`}
                                                         >
-                                                            Add Node
+                                                            Add Machine
                                                             <span className={`material-icons text-lg transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}>expand_more</span>
                                                         </button>
 
@@ -189,11 +184,11 @@ const Compare: React.FC = () => {
                                         {/* Dynamic Rows based on details */}
                                         {(allDetailKeys as string[]).map((key, idx) => (
                                             <tr key={key} className={`group/row transition-colors ${idx % 2 === 0 ? '' : (theme === 'dark' ? 'bg-white/[0.02]' : 'bg-gray-50/30')}`}>
-                                                <td className={`py-6 px-8 border-r font-mono text-xs uppercase tracking-[0.2em] font-bold border-l-4 border-l-transparent group-hover/row:border-l-primary group-hover/row:bg-primary/5 transition-all ${theme === 'dark' ? 'border-r-white/5 text-gray-400 group-hover/row:text-white' : 'border-r-gray-100 text-gray-500 group-hover/row:text-gray-900'}`}>
+                                                <td className={`py-6 px-8 border-r text-xs uppercase tracking-[0.2em] font-bold border-l-4 border-l-transparent group-hover/row:border-l-primary group-hover/row:bg-primary/5 transition-all ${theme === 'dark' ? 'border-r-white/5 text-gray-400 group-hover/row:text-white' : 'border-r-gray-100 text-gray-500 group-hover/row:text-gray-900'}`}>
                                                     {key.replace(/([A-Z])/g, ' $1').trim()}
                                                 </td>
                                                 {selectedProducts.map(p => (
-                                                    <td key={p.id} className={`py-6 px-8 border-r last:border-r-0 font-mono text-base md:text-lg font-bold leading-relaxed transition-all group-hover/row:bg-primary/5 ${theme === 'dark' ? 'border-white/5 text-white' : 'border-gray-100 text-gray-900'}`}>
+                                                    <td key={p.id} className={`py-6 px-8 border-r last:border-r-0 text-sm md:text-base font-bold leading-relaxed transition-all group-hover/row:bg-primary/5 ${theme === 'dark' ? 'border-white/5 text-white' : 'border-gray-100 text-gray-900'}`}>
                                                         {(p.details as any)[key] || "—"}
                                                     </td>
                                                 ))}

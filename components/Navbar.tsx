@@ -9,22 +9,37 @@ const Navbar: React.FC = () => {
   const { compareIds } = useCompare();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const isHome = location.pathname === '/';
 
-  const navClass = isHome
-    ? `fixed w-full z-50 transition-all duration-300 ${isScrolled
+  const navClass = `${isHome
+    ? `fixed w-full z-50 transition-all duration-500 ${isScrolled
       ? `${theme === 'dark' ? 'bg-background-dark/95 border-white/10' : 'bg-background-light/95 border-gray-200'} border-b py-4 shadow-lg backdrop-blur-md`
       : `bg-transparent py-6 border-b ${theme === 'dark' ? 'border-white/10' : 'border-gray-200'}`}`
-    : `fixed w-full z-50 ${theme === 'dark' ? 'bg-background-dark/95 border-white/10' : 'bg-background-light/95 border-gray-200'} border-b py-4 backdrop-blur-md transition-all duration-300`;
+    : `fixed w-full z-50 ${theme === 'dark' ? 'bg-background-dark/95 border-white/10' : 'bg-background-light/95 border-gray-200'} border-b py-4 backdrop-blur-md transition-all duration-500`} 
+    ${isVisible ? 'translate-y-0' : '-translate-y-full'}`;
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+
+      setIsScrolled(currentScrollY > 50);
+
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const NavLink = ({ to, label, badge }: { to: string; label: string; badge?: number }) => {
     const isActive = location.pathname === to;
@@ -49,7 +64,7 @@ const Navbar: React.FC = () => {
       <div className="container-custom flex justify-between items-center h-full">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2 md:space-x-3 group relative z-[60]">
-          <img src="/alsun/logomark.png" alt="Alsun Machinery Logo" className={`h-8 w-auto md:h-10 group-hover:opacity-80 transition-all ${theme === 'light' ? 'filter brightness-90' : ''}`} />
+          <img src="/alsun/logomark.png" alt="Alsun Machinery Logo" className={`h-8 w-auto md:h-10 ${theme === 'light' ? 'filter brightness-90' : ''}`} />
           <div className="flex flex-col">
             <span className={`${theme === 'dark' ? 'text-white' : 'text-gray-900'} font-display font-bold tracking-widest text-base md:text-lg uppercase leading-none`}>Alsun</span>
             <span className="text-[0.5rem] md:text-[0.6rem] tracking-[0.3em] text-gray-400 uppercase leading-none font-semibold">Machinery</span>

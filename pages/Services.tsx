@@ -5,7 +5,7 @@ const Services: React.FC = () => {
   const { theme } = useTheme();
 
   return (
-    <div className={`transition-colors duration-300 font-sans pt-20 ${theme === 'dark' ? 'bg-background-dark text-text-dark' : 'bg-background-light text-text-light'}`}>
+    <div className={`transition-colors duration-500 antialiased overflow-x-hidden pt-16 font-sans ${theme === 'dark' ? 'bg-background-dark text-slate-200' : 'bg-background-light text-text-light'}`}>
 
       {/* Hero Header */}
       <header className="relative min-h-[60vh] flex items-center justify-center text-center px-4 overflow-hidden pt-24 pb-12">
@@ -151,7 +151,7 @@ const Services: React.FC = () => {
 
           <div className="pt-12 border-t border-white/10">
             <button className="bg-white text-black hover:bg-primary hover:text-white px-10 py-5 rounded-2xl text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] transition-all shadow-xl shadow-black/20 active:scale-95">
-              Request Service Catalog
+              Download Brochure
             </button>
           </div>
         </div>

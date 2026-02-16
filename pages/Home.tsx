@@ -13,16 +13,16 @@ const Home: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <img
             alt="Industrial Machinery Background"
-            className={`w-full h-full object-cover ${theme === 'dark' ? 'opacity-30' : 'opacity-20'}`}
+            className={`w-full h-full object-cover ${theme === 'dark' ? 'opacity-50' : 'opacity-40'}`}
             src="/alsun/bg-1.jpg"
           />
-          <div className={`absolute inset-0 bg-gradient-to-b from-transparent ${theme === 'dark' ? 'via-background-dark/80 to-background-dark' : 'via-background-light/80 to-background-light'}`}></div>
+          <div className={`absolute inset-0 bg-gradient-to-b from-transparent ${theme === 'dark' ? 'via-background-dark/20' : 'via-background-light/10'} to-transparent`}></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="mb-4 flex justify-center">
-            <img src="/alsun/logomark.png" alt="Alsun Machinery Logo" className={`h-16 md:h-24 w-auto animate-float ${theme === 'light' ? 'filter brightness-90' : ''}`} />
+            <img src="/alsun/logomark.png" alt="Alsun Machinery Logo" className={`h-16 md:h-24 w-auto ${theme === 'light' ? 'filter brightness-90' : ''}`} />
           </div>
 
           <p className="text-[10px] md:text-xs tracking-[0.3em] font-semibold text-gray-500 uppercase mb-2 font-display">Alsun Machinery</p>
@@ -197,27 +197,98 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Subscribe Section */}
-      <section className={`py-fluid-section relative overflow-hidden border-t transition-colors ${theme === 'dark' ? 'bg-background-dark border-white/5' : 'bg-gray-900 border-none'}`}>
-        <div className="container-custom">
-          <div className="w-24 h-0.5 bg-primary/30 mx-auto mb-12"></div>
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-fluid-h2 font-display font-medium text-white mb-4">
-              Ready to Upgrade?
-            </h2>
-            <p className="text-gray-400 text-sm mb-12 max-w-md mx-auto px-6">
-              Sign up to receive our full technical catalog and latest machine updates.
-            </p>
-            <form className="flex flex-col items-center max-w-lg mx-auto px-6" onSubmit={(e) => e.preventDefault()}>
-              <input
-                className="w-full bg-transparent border-b border-gray-600 px-4 py-3 text-center text-lg focus:outline-none focus:border-primary placeholder-gray-600 text-white transition-colors"
-                placeholder="Enter Email Address"
-                type="email"
-              />
-              <button className="mt-10 bg-white text-black px-12 py-4 text-xs tracking-widest uppercase font-bold hover:bg-primary hover:text-white transition-all duration-300 rounded-xl shadow-xl active:scale-95" type="submit">
-                Subscribe
-              </button>
-            </form>
+      {/* Contact & Enquiry Portal */}
+      <section className={`py-fluid-section relative overflow-hidden transition-all border-t ${theme === 'dark' ? 'bg-[#030303] border-white/5' : 'bg-gray-50 border-gray-200'}`}>
+
+        {/* Background Decor: Blueprint style lines */}
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
+          <div className={`absolute top-0 right-0 w-1/2 h-full opacity-10 ${theme === 'dark' ? 'invert' : ''}`}>
+            <svg width="100%" height="100%" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 100H400M0 200H400M0 300H400M100 0V400M200 0V400M300 0V400" stroke="currentColor" strokeWidth="0.5" />
+              <circle cx="200" cy="200" r="100" stroke="currentColor" strokeWidth="1" />
+              <rect x="150" y="150" width="100" height="100" stroke="currentColor" strokeWidth="1" />
+            </svg>
+          </div>
+          <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+        </div>
+
+        <div className="container-custom relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-stretch">
+
+            {/* Left: Formal Contact Info */}
+            <div className="lg:col-span-7 flex flex-col justify-center">
+              <h2 className={`text-fluid-h2 font-display font-bold mb-8 uppercase tracking-tight leading-none ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                Scale Your <br /> Operations
+              </h2>
+              <p className={`text-sm md:text-base mb-12 max-w-xl leading-relaxed font-light ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                Whether you're establishing a new production line or upgrading existing capacity,
+                our engineering consultants are available for site audits and technical feasibility studies.
+              </p>
+
+              <div className="space-y-8">
+                <div className="flex items-start gap-6">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <span className="material-icons-outlined text-xl">corporate_fare</span>
+                  </div>
+                  <div>
+                    <h4 className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-1 ${theme === 'dark' ? 'text-gray-500' : 'text-gray-400'}`}>Headquarters</h4>
+                    <p className={`text-sm font-medium ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Noida, Uttar Pradesh, India</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  <div className="flex items-start gap-6">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                      <span className="material-icons-outlined text-xl">headset_mic</span>
+                    </div>
+                    <div>
+                      <h4 className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-1 ${theme === 'dark' ? 'text-gray-500' : 'text-gray-400'}`}>Sales Support</h4>
+                      <p className={`text-sm font-medium ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>+91 83681 25978</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-6">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                      <span className="material-icons-outlined text-xl">alternate_email</span>
+                    </div>
+                    <div>
+                      <h4 className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-1 ${theme === 'dark' ? 'text-gray-500' : 'text-gray-400'}`}>Digital Enquiries</h4>
+                      <p className={`text-sm font-medium ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>sales@alsun.com</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Premium Action Card */}
+            <div className="lg:col-span-5">
+              <div className={`p-8 md:p-12 h-full flex flex-col justify-center rounded-[3rem] border backdrop-blur-md relative overflow-hidden ${theme === 'dark' ? 'bg-white/[0.03] border-white/10' : 'bg-gray-900 border-none'}`}>
+                {/* Accent */}
+                <div className="absolute top-0 right-0 w-24 h-24 bg-primary/20 blur-[60px]"></div>
+
+                <h3 className="text-xl md:text-2xl font-display font-bold text-white mb-6 uppercase tracking-wider">Technical Resources</h3>
+                <p className="text-gray-400 text-xs md:text-sm mb-10 leading-relaxed font-light">
+                  Direct access to equipment manuals, cycle time analysis, and layout specifications.
+                </p>
+
+                <div className="space-y-4">
+                  <Link to="/contact" className="w-full bg-primary hover:bg-white hover:text-black text-white px-8 py-5 rounded-2xl text-[10px] font-bold uppercase tracking-[0.3em] transition-all flex items-center justify-center gap-3 active:scale-95">
+                    Contact Engineering
+                    <span className="material-icons text-sm">arrow_forward</span>
+                  </Link>
+                  <button className="w-full bg-white/5 border border-white/10 text-white hover:bg-white hover:text-black px-8 py-5 rounded-2xl text-[10px] font-bold uppercase tracking-[0.3em] transition-all flex items-center justify-center gap-3">
+                    Download Brochure
+                    <span className="material-icons text-sm">download</span>
+                  </button>
+                </div>
+
+                <div className="mt-12 flex items-center gap-4 text-primary opacity-60">
+                  <div className="h-px flex-grow bg-primary/20"></div>
+                  <span className="material-icons text-lg">verified</span>
+                  <div className="h-px flex-grow bg-primary/20"></div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
