@@ -22,6 +22,20 @@ const Navbar: React.FC = () => {
     ${isVisible ? 'translate-y-0' : '-translate-y-full'}`;
 
   useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.classList.add('mobile-menu-active');
+    } else {
+      document.body.style.overflow = 'unset';
+      document.body.classList.remove('mobile-menu-active');
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+      document.body.classList.remove('mobile-menu-active');
+    };
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
@@ -108,7 +122,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       <div className={`md:hidden fixed inset-0 z-50 transition-all duration-500 ease-in-out ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-        <div className={`absolute inset-0 ${theme === 'dark' ? 'bg-background-dark/95' : 'bg-background-light/95'} backdrop-blur-xl shadow-2xl`}></div>
+        <div className={`absolute inset-0 ${theme === 'dark' ? 'bg-black/60' : 'bg-white/40'} backdrop-blur-3xl shadow-2xl`}></div>
 
         <div className={`relative h-full flex flex-col p-8 pt-24 space-y-4 transform transition-transform duration-500 ease-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="flex flex-col space-y-1">
@@ -116,7 +130,7 @@ const Navbar: React.FC = () => {
             {[
               { to: "/", label: "Home", icon: "home" },
               { to: "/products", label: "Products", icon: "inventory_2" },
-              { to: "/compare", label: "Compare Matrix", icon: "analytics", badge: compareIds.length },
+              { to: "/compare", label: "Compare Machines", icon: "analytics", badge: compareIds.length },
               { to: "/services", label: "Our Services", icon: "support_agent" },
               { to: "/contact", label: "Contact Us", icon: "email" },
             ].map((link, idx) => (
@@ -124,7 +138,7 @@ const Navbar: React.FC = () => {
                 key={idx}
                 to={link.to}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`flex items-center justify-between p-4 rounded-xl border transition-all ${theme === 'dark' ? 'bg-white/5 border-white/5 text-gray-300' : 'bg-gray-100 border-gray-200 text-gray-700'}`}
+                className={`flex items-center justify-between p-4 rounded-xl border transition-all ${theme === 'dark' ? 'bg-black/40 border-white/5 text-gray-300' : 'bg-white/80 border-gray-200 text-gray-700'}`}
               >
                 <div className="flex items-center gap-4">
                   <span className="material-icons text-primary opacity-60">{link.icon}</span>

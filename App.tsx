@@ -27,7 +27,7 @@ const AppContent: React.FC = () => {
     <div className={`flex flex-col min-h-screen transition-colors duration-500 relative ${theme === 'dark' ? 'bg-background-dark text-text-dark' : 'bg-background-light text-text-light'}`}>
 
       {/* Global Background Layer */}
-      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+      <div id="app-background" className="fixed inset-0 z-0 pointer-events-none overflow-hidden transition-all duration-500">
         {/* Animated Grid */}
         <div className={`absolute inset-0 ${theme === 'dark' ? 'bg-grid-pattern opacity-40' : 'bg-grid-pattern-light opacity-60'}`}></div>
 
@@ -44,8 +44,9 @@ const AppContent: React.FC = () => {
           : 'bg-[radial-gradient(circle_at_50%_50%,transparent_0%,rgba(255,255,255,0.2)_100%)]'}`}></div>
       </div>
 
-      <div className="relative z-10 flex flex-col min-h-screen">
-        <Navbar />
+      <Navbar />
+
+      <div id="page-content" className="relative z-10 flex flex-col min-h-screen transition-all duration-500">
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />

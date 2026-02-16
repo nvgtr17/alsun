@@ -163,3 +163,14 @@ body {
 .animate-float {
     animation: float 20s ease-in-out infinite;
 }
+
+/* Mobile Menu Blur Logic */
+body.mobile-menu-active #page-content,
+body.mobile-menu-active #app-background {
+    filter: blur(20px) brightness(0.7);
+    transition: filter 0.5s ease-in-out, brightness 0.5s ease-in-out;
+}
+
+body.mobile-menu-active {
+    background-color: transparent !important;
+}
