@@ -21,12 +21,11 @@ const Home: React.FC = () => {
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto">
-          <div className="mb-4 flex justify-center">
-            <img src="/alsun/logomark.png" alt="Alsun Machinery Logo" className={`h-16 md:h-24 w-auto ${theme === 'light' ? 'filter brightness-90' : ''}`} />
+          <div className="mb-2 flex justify-center">
+            <img src="/alsun/logomark.png" alt="Alsun Machinery Logo" className={`h-24 md:h-48 w-auto ${theme === 'light' ? 'filter brightness-90' : ''}`} />
           </div>
 
-          <p className="text-[10px] md:text-xs tracking-[0.3em] font-semibold text-gray-500 uppercase mb-2 font-display">Alsun Machinery</p>
-          <p className="text-[10px] md:text-sm tracking-[0.2em] font-medium text-gray-400 uppercase mb-6">Smart Engineering Experts</p>
+          <p className="text-[12px] md:text-sm tracking-[0.4em] font-semibold text-gray-500 uppercase mb-8 font-display">Alsun Machinery</p>
 
           <h1 className={`font-display text-fluid-h1 font-bold mb-6 tracking-wide px-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
             ENGINEERING <br className="hidden sm:block" /> THE FUTURE
@@ -50,9 +49,9 @@ const Home: React.FC = () => {
       </section>
 
       {/* About / Precision Section */}
-      <section className={`py-fluid-section relative overflow-hidden transition-colors ${theme === 'dark' ? 'bg-surface-dark' : 'bg-white'}`}>
+      <section className={`py-12 md:py-fluid-section relative overflow-hidden transition-colors ${theme === 'dark' ? 'bg-surface-dark' : 'bg-white'}`}>
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
             <div className="relative group order-2 lg:order-1">
               <div className="absolute -top-6 -left-6 w-32 h-32 border-t-4 border-l-4 border-primary/20 hidden lg:block"></div>
               <div className="relative overflow-hidden rounded-xl shadow-2xl">
@@ -62,31 +61,31 @@ const Home: React.FC = () => {
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgJTt9e2GS8cW_zGqbT6D5PQnpTnqXwxPf0u-vEmolFJvLBAvpFO2zP0muTh0PUk42M4bZLupTuvF6TYmRFE3M8k20d_YNcxWz2a0M9MlZ8SZlFmUgELVSq_5H3yq7XR-ZGNlgXBblVzau8aINQXrb0xbZzv4g5AkDALflKGmryOcHH-9WWwB8rZ4PAvtYX2KB21-TT3bBwsh2dMGjHUyXKnXteBH_ucRRPwRzlTVXwmu0KjxOU7UnVtxiVKgHhOkHuWdle06hisls"
                 />
               </div>
-              <div className={`absolute -bottom-4 -right-4 p-4 md:p-6 max-w-[200px] md:max-w-xs z-20 shadow-2xl border-l-4 border-primary ${theme === 'dark' ? 'bg-background-dark text-white' : 'bg-white text-gray-900'}`}>
-                <p className="font-display text-3xl md:text-4xl font-bold text-primary mb-1">20+</p>
-                <p className={`text-[10px] md:text-xs uppercase tracking-wider ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>Years of Excellence</p>
+              <div className={`absolute bottom-3 right-3 md:-bottom-4 md:-right-4 p-3 md:p-6 max-w-[140px] md:max-w-xs z-20 shadow-2xl border-l-4 border-primary rounded-lg md:rounded-none ${theme === 'dark' ? 'bg-background-dark text-white' : 'bg-white text-gray-900'}`}>
+                <p className="font-display text-2xl md:text-4xl font-bold text-primary mb-0.5">20+</p>
+                <p className={`text-[9px] md:text-xs uppercase tracking-wider ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>Years of Excellence</p>
               </div>
             </div>
 
             <div className="order-1 lg:order-2">
-              <span className="text-primary font-bold tracking-[0.2em] text-[10px] md:text-xs uppercase mb-3 block">Who We Are</span>
-              <h2 className={`text-fluid-h2 font-display font-bold mb-6 uppercase leading-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Precision in Every Cycle</h2>
-              <p className={`mb-6 text-sm md:text-base leading-relaxed ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                Founded with a relentless pursuit of perfection, Alsun Machinery has evolved into a global leader in blow molding solutions. We bridge the gap between complex engineering and user-friendly operation.
+              <span className="text-primary font-bold tracking-[0.2em] text-[10px] md:text-xs uppercase mb-2 md:mb-3 block">Who We Are</span>
+              <h2 className={`text-fluid-h2 font-display font-bold mb-4 md:mb-6 uppercase leading-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Built to Outperform</h2>
+              <p className={`mb-4 md:mb-6 text-sm md:text-base leading-relaxed ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                Our machines feature a heavy square pipe structure for maximum rigidity. Every component is CNC & VMC machined, ensuring a level of precision that conventional methods cannot match.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
-                <div className="flex items-start space-x-3 p-4 rounded-xl bg-primary/5 border border-primary/10">
-                  <span className="material-icons text-primary text-2xl">settings_suggest</span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 mt-6 md:mt-10">
+                <div className="flex items-start space-x-3 md:space-x-4 p-4 md:p-5 rounded-2xl bg-primary/5 border border-primary/10 transition-all hover:bg-primary/10">
+                  <span className="material-icons text-primary text-2xl md:text-3xl">precision_manufacturing</span>
                   <div>
-                    <h4 className={`font-bold uppercase text-xs ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>Custom Solutions</h4>
-                    <p className={`text-[10px] mt-1 ${theme === 'dark' ? 'text-gray-500' : 'text-gray-500'}`}>Tailored to your specific mold requirements.</p>
+                    <h4 className={`font-bold uppercase text-xs md:text-base tracking-wide ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>CNC Precision</h4>
+                    <p className={`text-[11px] md:text-sm mt-1 leading-relaxed ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Perfectly fitted components for smoother movement and reliable performance.</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3 p-4 rounded-xl bg-primary/5 border border-primary/10">
-                  <span className="material-icons text-primary text-2xl">speed</span>
+                <div className="flex items-start space-x-3 md:space-x-4 p-4 md:p-5 rounded-2xl bg-primary/5 border border-primary/10 transition-all hover:bg-primary/10">
+                  <span className="material-icons text-primary text-2xl md:text-3xl">verified</span>
                   <div>
-                    <h4 className={`font-bold uppercase text-xs ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>High Throughput</h4>
-                    <p className={`text-[10px] mt-1 ${theme === 'dark' ? 'text-gray-500' : 'text-gray-500'}`}>Maximized output with minimized downtime.</p>
+                    <h4 className={`font-bold uppercase text-xs md:text-base tracking-wide ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>1-Year Warranty</h4>
+                    <p className={`text-[11px] md:text-sm mt-1 leading-relaxed ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>12-month coverage on all major components for total peace of mind.</p>
                   </div>
                 </div>
               </div>
@@ -96,60 +95,56 @@ const Home: React.FC = () => {
       </section>
 
       {/* Major Products Section */}
-      <section className={`py-fluid-section border-t transition-colors ${theme === 'dark' ? 'bg-background-dark border-white/5' : 'bg-gray-50 border-gray-200'}`}>
+      <section className={`py-12 md:py-fluid-section border-t transition-colors ${theme === 'dark' ? 'bg-background-dark border-white/5' : 'bg-gray-50 border-gray-200'}`}>
         <div className="container-custom">
-          <div className="text-center mb-12 md:mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <span className="text-[10px] tracking-[0.2em] font-semibold text-gray-500 uppercase">Major Products</span>
-            <h2 className={`mt-3 text-fluid-h2 font-display font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+            <h2 className={`mt-2 md:mt-3 text-fluid-h2 font-display font-bold mb-3 md:mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
               Precision PET & HDPE
             </h2>
-            <p className={`mt-4 max-w-2xl mx-auto text-sm md:text-base px-4 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+            <p className={`mt-3 md:mt-6 max-w-3xl mx-auto text-sm md:text-lg lg:text-xl px-2 font-medium leading-relaxed ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
               Purpose-built blow molding machinery engineered for consistency, uptime, and effortless servicing.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 lg:gap-12">
             {/* Card 1 */}
-            <Link to="/products" className={`group rounded-3xl overflow-hidden shadow-xl border transition-all hover:shadow-2xl hover:shadow-primary/10 hover:border-primary/30 ${theme === 'dark' ? 'bg-surface-dark border-white/5' : 'bg-white border-gray-100'}`}>
-              <div className={`h-56 md:h-80 flex items-center justify-center relative overflow-hidden ${theme === 'dark' ? 'bg-background-dark' : 'bg-gray-100'}`}>
+            <Link to="/products" className={`group rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border transition-all hover:shadow-2xl hover:shadow-primary/10 hover:border-primary/30 h-full flex flex-col ${theme === 'dark' ? 'bg-surface-dark border-white/5' : 'bg-white border-gray-100'}`}>
+              <div className={`h-44 md:h-80 shrink-0 flex items-center justify-center relative overflow-hidden ${theme === 'dark' ? 'bg-background-dark' : 'bg-gray-100'}`}>
                 <div className={`absolute inset-0 ${theme === 'dark' ? 'bg-white/5' : 'bg-gray-200/50'}`}></div>
-                <div className={`absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px]`}></div>
-
                 <img
-                  alt="Semi Automatic Machine Wireframe"
-                  className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500`}
+                  alt="Semi Automatic Machine"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   src="/alsun/machine/SUMO_ALSUN_MACHINE-removebg-preview.png"
                 />
-                <div className={`absolute z-10 bottom-6 left-6 px-4 py-2 border backdrop-blur-md rounded-xl ${theme === 'dark' ? 'border-white/20 bg-background-dark/60 text-white' : 'border-gray-200 bg-white/60 text-gray-900'}`}>
-                  <span className="font-display text-sm tracking-wider uppercase font-bold">Semi-Auto Series</span>
+                <div className={`absolute z-10 top-3 left-3 md:top-6 md:left-6 px-3 py-1.5 md:px-4 md:py-2 border backdrop-blur-md rounded-lg md:rounded-xl ${theme === 'dark' ? 'border-white/20 bg-background-dark/60 text-white' : 'border-gray-200 bg-white/60 text-gray-900'}`}>
+                  <span className="font-display text-[11px] md:text-sm tracking-wider uppercase font-bold">Semi-Auto Series</span>
                 </div>
               </div>
-              <div className={`p-6 md:p-8 ${theme === 'dark' ? 'bg-card-dark text-white' : 'bg-white text-gray-900'}`}>
-                <h3 className="text-xl font-bold mb-2">Semi Automatic</h3>
-                <p className={`text-sm leading-relaxed ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+              <div className={`p-5 md:p-10 flex-grow flex flex-col ${theme === 'dark' ? 'bg-card-dark text-white' : 'bg-white text-gray-900'}`}>
+                <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-4 uppercase tracking-tight">Semi Automatic Blowing Machines</h3>
+                <p className={`text-sm md:text-lg leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
                   High-output PET blow molding system delivering uniform wall thickness and rapid cycle times.
                 </p>
               </div>
             </Link>
 
             {/* Card 2 */}
-            <Link to="/products" className={`group rounded-3xl overflow-hidden shadow-xl border transition-all hover:shadow-2xl hover:shadow-primary/10 hover:border-primary/30 ${theme === 'dark' ? 'bg-surface-dark border-white/5' : 'bg-white border-gray-100'}`}>
-              <div className={`h-56 md:h-80 flex items-center justify-center relative overflow-hidden ${theme === 'dark' ? 'bg-background-dark' : 'bg-gray-100'}`}>
+            <Link to="/products" className={`group rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border transition-all hover:shadow-2xl hover:shadow-primary/10 hover:border-primary/30 h-full flex flex-col ${theme === 'dark' ? 'bg-surface-dark border-white/5' : 'bg-white border-gray-100'}`}>
+              <div className={`h-44 md:h-80 shrink-0 flex items-center justify-center relative overflow-hidden ${theme === 'dark' ? 'bg-background-dark' : 'bg-gray-100'}`}>
                 <div className={`absolute inset-0 ${theme === 'dark' ? 'bg-white/5' : 'bg-gray-200/50'}`}></div>
-                <div className={`absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px]`}></div>
-
                 <img
-                  alt="Automatic Machine Wireframe"
-                  className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500`}
+                  alt="Automatic Machine"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   src="/alsun/machine/MACHINE.png"
                 />
-                <div className={`absolute z-10 bottom-6 left-6 px-4 py-2 border backdrop-blur-md rounded-xl ${theme === 'dark' ? 'border-white/20 bg-background-dark/60 text-white' : 'border-gray-200 bg-white/60 text-gray-900'}`}>
-                  <span className="font-display text-sm tracking-wider uppercase font-bold">Fully-Auto Series</span>
+                <div className={`absolute z-10 top-3 left-3 md:top-6 md:left-6 px-3 py-1.5 md:px-4 md:py-2 border backdrop-blur-md rounded-lg md:rounded-xl ${theme === 'dark' ? 'border-white/20 bg-background-dark/60 text-white' : 'border-gray-200 bg-white/60 text-gray-900'}`}>
+                  <span className="font-display text-[11px] md:text-sm tracking-wider uppercase font-bold">Fully-Auto Series</span>
                 </div>
               </div>
-              <div className={`p-6 md:p-8 ${theme === 'dark' ? 'bg-card-dark text-white' : 'bg-white text-gray-900'}`}>
-                <h3 className="text-xl font-bold mb-2">Automatic</h3>
-                <p className={`text-sm leading-relaxed ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+              <div className={`p-5 md:p-10 flex-grow flex flex-col ${theme === 'dark' ? 'bg-card-dark text-white' : 'bg-white text-gray-900'}`}>
+                <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-4 uppercase tracking-tight">Automatic Blowing Machines</h3>
+                <p className={`text-sm md:text-lg leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
                   Space-efficient HDPE unit with auto mold changeovers that shortens downtime.
                 </p>
               </div>
@@ -158,39 +153,51 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className={`py-fluid-section transition-colors ${theme === 'dark' ? 'bg-surface-dark' : 'bg-white'}`}>
+      {/* Features Section — from brochure */}
+      <section className={`py-12 md:py-fluid-section transition-colors ${theme === 'dark' ? 'bg-surface-dark' : 'bg-white'}`}>
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center">
+          <div className="text-center mb-8 md:mb-12">
+            <span className="text-primary font-bold tracking-[0.3em] text-[10px] md:text-xs uppercase mb-2 md:mb-3 block">What Sets Us Apart</span>
+            <h2 className={`text-fluid-h2 font-display font-bold uppercase tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Engineering Excellence</h2>
+          </div>
 
-            <div className="flex flex-col items-center group">
-              <div className={`mb-6 text-primary p-6 rounded-3xl border shadow-sm group-hover:border-primary/50 transition-all group-hover:-translate-y-2 ${theme === 'dark' ? 'border-gray-800 bg-background-dark' : 'border-gray-100 bg-gray-50'}`}>
-                <span className="material-icons-outlined text-4xl md:text-5xl">anchor</span>
+          {/* Mobile: horizontal compact cards / Desktop: centered 3-col */}
+          <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-12 md:text-center">
+
+            <div className={`flex items-start gap-4 p-4 rounded-2xl md:flex-col md:items-center md:p-0 md:rounded-none group ${theme === 'dark' ? 'bg-white/[0.02] md:bg-transparent' : 'bg-gray-50 md:bg-transparent'}`}>
+              <div className={`shrink-0 text-primary p-3 md:p-6 md:mb-6 rounded-2xl md:rounded-3xl border shadow-lg md:shadow-xl group-hover:border-primary/50 transition-all group-hover:-translate-y-1 md:group-hover:-translate-y-2 ${theme === 'dark' ? 'border-gray-800 bg-background-dark' : 'border-gray-100 bg-white md:bg-gray-50'}`}>
+                <span className="material-icons-outlined text-2xl md:text-4xl">air</span>
               </div>
-              <h3 className={`text-xs md:text-sm font-bold uppercase tracking-wider mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Robust Build</h3>
-              <p className={`text-[10px] md:text-xs max-w-xs leading-relaxed ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
-                Heavy square pipe structure ensures industrial-grade stability.
-              </p>
+              <div>
+                <h3 className={`text-sm md:text-lg font-bold uppercase tracking-wider mb-1 md:mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Festo Pneumatics</h3>
+                <p className={`text-xs md:text-base max-w-sm leading-relaxed font-medium ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+                  World-standard cylinders for precision, long life, and responsive movement.
+                </p>
+              </div>
             </div>
 
-            <div className="flex flex-col items-center group">
-              <div className={`mb-6 text-primary p-6 rounded-3xl border shadow-sm group-hover:border-primary/50 transition-all group-hover:-translate-y-2 ${theme === 'dark' ? 'border-gray-800 bg-background-dark' : 'border-gray-100 bg-gray-50'}`}>
-                <span className="material-icons-outlined text-4xl md:text-5xl">schedule</span>
+            <div className={`flex items-start gap-4 p-4 rounded-2xl md:flex-col md:items-center md:p-0 md:rounded-none group ${theme === 'dark' ? 'bg-white/[0.02] md:bg-transparent' : 'bg-gray-50 md:bg-transparent'}`}>
+              <div className={`shrink-0 text-primary p-3 md:p-6 md:mb-6 rounded-2xl md:rounded-3xl border shadow-lg md:shadow-xl group-hover:border-primary/50 transition-all group-hover:-translate-y-1 md:group-hover:-translate-y-2 ${theme === 'dark' ? 'border-gray-800 bg-background-dark' : 'border-gray-100 bg-white md:bg-gray-50'}`}>
+                <span className="material-icons-outlined text-2xl md:text-4xl">recycling</span>
               </div>
-              <h3 className={`text-xs md:text-sm font-bold uppercase tracking-wider mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Service Ready</h3>
-              <p className={`text-[10px] md:text-xs max-w-xs leading-relaxed ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
-                We offer a full 2-year warranty covering all major components.
-              </p>
+              <div>
+                <h3 className={`text-sm md:text-lg font-bold uppercase tracking-wider mb-1 md:mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Air Recovery</h3>
+                <p className={`text-xs md:text-base max-w-sm leading-relaxed font-medium ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+                  Captures high-pressure air post-blowing to cut compressor load and energy costs.
+                </p>
+              </div>
             </div>
 
-            <div className="flex flex-col items-center group">
-              <div className={`mb-6 text-primary p-6 rounded-3xl border shadow-sm group-hover:border-primary/50 transition-all group-hover:-translate-y-2 ${theme === 'dark' ? 'border-gray-800 bg-background-dark' : 'border-gray-100 bg-gray-50'}`}>
-                <span className="material-icons-outlined text-4xl md:text-5xl">bolt</span>
+            <div className={`flex items-start gap-4 p-4 rounded-2xl md:flex-col md:items-center md:p-0 md:rounded-none group ${theme === 'dark' ? 'bg-white/[0.02] md:bg-transparent' : 'bg-gray-50 md:bg-transparent'}`}>
+              <div className={`shrink-0 text-primary p-3 md:p-6 md:mb-6 rounded-2xl md:rounded-3xl border shadow-lg md:shadow-xl group-hover:border-primary/50 transition-all group-hover:-translate-y-1 md:group-hover:-translate-y-2 ${theme === 'dark' ? 'border-gray-800 bg-background-dark' : 'border-gray-100 bg-white md:bg-gray-50'}`}>
+                <span className="material-icons-outlined text-2xl md:text-4xl">support_agent</span>
               </div>
-              <h3 className={`text-xs md:text-sm font-bold uppercase tracking-wider mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>High Output</h3>
-              <p className={`text-[10px] md:text-xs max-w-xs leading-relaxed ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
-                Advanced cycle optimization for peak production units-per-hour.
-              </p>
+              <div>
+                <h3 className={`text-sm md:text-lg font-bold uppercase tracking-wider mb-1 md:mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>24/7 Support</h3>
+                <p className={`text-xs md:text-base max-w-sm leading-relaxed font-medium ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+                  Nationwide service network — expert on-site assistance always within reach.
+                </p>
+              </div>
             </div>
 
           </div>
@@ -231,8 +238,8 @@ const Home: React.FC = () => {
                     <span className="material-icons-outlined text-xl">corporate_fare</span>
                   </div>
                   <div>
-                    <h4 className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-1 ${theme === 'dark' ? 'text-gray-500' : 'text-gray-400'}`}>Headquarters</h4>
-                    <p className={`text-sm font-medium ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Noida, Uttar Pradesh, India</p>
+                    <h4 className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-1 ${theme === 'dark' ? 'text-gray-500' : 'text-gray-400'}`}>Headquarters & Factory Unit</h4>
+                    <p className={`text-sm font-medium ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>K-25, Site V, Kasna, Surajpur Industrial Area, Greater Noida, Uttar Pradesh, India -201306</p>
                   </div>
                 </div>
 
@@ -275,10 +282,10 @@ const Home: React.FC = () => {
                     Contact Engineering
                     <span className="material-icons text-sm">arrow_forward</span>
                   </Link>
-                  <button className="w-full bg-white/5 border border-white/10 text-white hover:bg-white hover:text-black px-8 py-5 rounded-2xl text-[10px] font-bold uppercase tracking-[0.3em] transition-all flex items-center justify-center gap-3">
+                  <a href="/Alsun brochure.pdf" download="Alsun_Machinery_Brochure.pdf" className="w-full bg-white/5 border border-white/10 text-white hover:bg-white hover:text-black px-8 py-5 rounded-2xl text-[10px] font-bold uppercase tracking-[0.3em] transition-all flex items-center justify-center gap-3">
                     Download Brochure
                     <span className="material-icons text-sm">download</span>
-                  </button>
+                  </a>
                 </div>
 
                 <div className="mt-12 flex items-center gap-4 text-primary opacity-60">

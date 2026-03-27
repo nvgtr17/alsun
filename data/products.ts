@@ -32,11 +32,11 @@ export const productsData: Record<string, any> = {
             blowingMachineWeight: 'Contact for details',
         },
         features: [
-            'Dual Zone Heating System',
-            'High Speed Production',
-            'Energy Efficient Operation',
-            'Advanced PLC Control',
-            'Robust Construction',
+            'Heavy square pipe structure for rigid, vibration-free operation',
+            'All components CNC & VMC machined for precision fit',
+            'Festo pneumatic cylinders for smooth, reliable motion',
+            'Schneider Electric controls for consistent performance',
+            'Air recovery system to reduce energy consumption',
         ]
     },
     '4-cav-automatic': {
@@ -72,11 +72,11 @@ export const productsData: Record<string, any> = {
             blowingMachineWeight: 'Contact for details',
         },
         features: [
-            'High Volume Output',
-            'Dual Zone Heating',
-            'Consistent Bottle Quality',
-            'Automated Preform Handling',
-            'Precision Stretching System',
+            'Heavy square pipe structure for sturdy base and body',
+            'CNC & VMC machined components for precision accuracy',
+            'Festo pneumatic cylinders for high-speed motion control',
+            'HIWIN guide rails for smooth, friction-free movement',
+            'Integrated UPS system compatibility for power protection',
         ]
     },
     'semi-2-cav-auto-drop': {
@@ -112,11 +112,11 @@ export const productsData: Record<string, any> = {
             blowingMachineWeight: 'Contact for details',
         },
         features: [
-            'Auto Drop System',
-            'Simplified Operation',
-            'Low Power Consumption',
-            'Compact Design',
-            'Easy Mould Change',
+            'Auto drop mechanism for faster cycle times',
+            'All components auto-blackened for corrosion resistance',
+            'MIG welded frame for maximum structural integrity',
+            'Schneider Electric switchgear for safe, reliable control',
+            'Easy mould mounting — no special tools required',
         ]
     },
     'semi-4-cav-auto-drop': {
@@ -152,11 +152,11 @@ export const productsData: Record<string, any> = {
             blowingMachineWeight: 'Contact for details',
         },
         features: [
-            'High Output Semi-Auto',
-            '4 Cavity Efficiency',
-            'Auto Drop Mechanism',
-            'Versatile Bottle Range',
-            'Cost Effective Solution',
+            'Heavy square pipe construction for robust performance',
+            'Festo pneumatics for precision blowing accuracy',
+            'HIWIN guide rails for smooth plate movement',
+            'Air recovery system to lower compressor load',
+            'Intelligent sensors for real-time performance monitoring',
         ]
     },
     'semi-auto-jar': {
@@ -192,11 +192,11 @@ export const productsData: Record<string, any> = {
             blowingMachineWeight: 'Contact for details',
         },
         features: [
-            'Wide Mouth Capability',
-            'Large Volume Production',
-            'Sturdy Jar Moulding',
-            'Adjustable Neck Support',
-            'Heavy Duty Performance',
+            'Wide mouth capability up to 120 MM neck diameter',
+            'CNC machined components for consistent jar quality',
+            'Reinforced MIG welded frame for heavy-duty operation',
+            'Auto-blackened parts for long-lasting corrosion protection',
+            'Nationwide service support with on-site assistance',
         ]
     },
 };

@@ -75,20 +75,76 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className={navClass}>
-      <div className="container-custom flex justify-between items-center h-full">
+      <div className="px-4 md:px-8 lg:px-12 flex justify-between items-center h-full">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2 md:space-x-3 group relative z-[60]">
-          <img src="/alsun/logomark.png" alt="Alsun Machinery Logo" className={`h-8 w-auto md:h-10 ${theme === 'light' ? 'filter brightness-90' : ''}`} />
-          <div className="flex flex-col">
-            <span className={`${theme === 'dark' ? 'text-white' : 'text-gray-900'} font-display font-bold tracking-widest text-base md:text-lg uppercase leading-none`}>Alsun</span>
-            <span className="text-[0.5rem] md:text-[0.6rem] tracking-[0.3em] text-gray-400 uppercase leading-none font-semibold">Machinery</span>
-          </div>
+          <img src="/alsun/logomark.png" alt="Alsun Machinery Logo" className={`h-11 w-auto md:h-14 ${theme === 'light' ? 'filter brightness-90' : ''}`} />
+          <span className={`${theme === 'dark' ? 'text-white' : 'text-gray-900'} font-display font-bold tracking-widest text-xl md:text-3xl uppercase leading-none whitespace-nowrap`}>
+            Alsun Machinery
+          </span>
         </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
           <NavLink to="/" label="Home" />
-          <NavLink to="/products" label="Products" />
+
+          {/* Products Dropdown */}
+          <div className="relative group py-2">
+            <Link
+              to="/products"
+              className={`text-sm font-medium tracking-wide uppercase transition-colors flex items-center gap-1 ${location.pathname.startsWith('/products') ? 'text-primary' : `${theme === 'dark' ? 'text-gray-300 hover:text-primary' : 'text-gray-600 hover:text-primary'}`}`}
+            >
+              Products
+              <span className="material-icons text-sm opacity-50 transition-transform group-hover:rotate-180">expand_more</span>
+            </Link>
+
+            <div className="absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <div className={`w-72 border shadow-2xl backdrop-blur-xl rounded-xl overflow-hidden ${theme === 'dark' ? 'bg-background-dark/95 border-white/10' : 'bg-white/95 border-gray-100'}`}>
+
+                {/* View All */}
+                <Link to="/products" className={`flex items-center gap-3 px-5 py-3.5 transition-colors ${theme === 'dark' ? 'hover:bg-white/5' : 'hover:bg-gray-50'}`}>
+                  <span className="material-icons text-primary text-lg">inventory_2</span>
+                  <span className={`text-[10px] font-bold uppercase tracking-widest ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>All Products</span>
+                </Link>
+
+                <div className={`h-px ${theme === 'dark' ? 'bg-white/5' : 'bg-gray-100'}`}></div>
+
+                {/* Automatic */}
+                <div className={`px-5 pt-4 pb-1.5`}>
+                  <span className="text-[8px] font-bold uppercase tracking-[0.3em] text-primary">Fully Automatic</span>
+                </div>
+                <Link to="/products/2-cav-automatic" className={`flex items-center justify-between px-5 py-2.5 transition-colors ${theme === 'dark' ? 'text-gray-400 hover:text-white hover:bg-white/5' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'}`}>
+                  <span className="text-[10px] font-bold uppercase tracking-widest">2 Cavity Automatic</span>
+                  <span className={`text-[9px] font-bold tracking-wider px-2 py-0.5 rounded-md ${theme === 'dark' ? 'bg-white/10 text-gray-300' : 'bg-gray-100 text-gray-600'}`}>2200 BPH</span>
+                </Link>
+                <Link to="/products/4-cav-automatic" className={`flex items-center justify-between px-5 py-2.5 transition-colors ${theme === 'dark' ? 'text-gray-400 hover:text-white hover:bg-white/5' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'}`}>
+                  <span className="text-[10px] font-bold uppercase tracking-widest">4 Cavity Automatic</span>
+                  <span className={`text-[9px] font-bold tracking-wider px-2 py-0.5 rounded-md ${theme === 'dark' ? 'bg-white/10 text-gray-300' : 'bg-gray-100 text-gray-600'}`}>4800 BPH</span>
+                </Link>
+
+                <div className={`h-px mx-5 my-1 ${theme === 'dark' ? 'bg-white/5' : 'bg-gray-100'}`}></div>
+
+                {/* Semi-Automatic */}
+                <div className={`px-5 pt-3 pb-1.5`}>
+                  <span className="text-[8px] font-bold uppercase tracking-[0.3em] text-primary">Semi-Automatic</span>
+                </div>
+                <Link to="/products/semi-2-cav-auto-drop" className={`flex items-center justify-between px-5 py-2.5 transition-colors ${theme === 'dark' ? 'text-gray-400 hover:text-white hover:bg-white/5' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'}`}>
+                  <span className="text-[10px] font-bold uppercase tracking-widest">Semi 2 Cav Auto Drop</span>
+                  <span className={`text-[9px] font-bold tracking-wider px-2 py-0.5 rounded-md ${theme === 'dark' ? 'bg-white/10 text-gray-300' : 'bg-gray-100 text-gray-600'}`}>1200 BPH</span>
+                </Link>
+                <Link to="/products/semi-4-cav-auto-drop" className={`flex items-center justify-between px-5 py-2.5 transition-colors ${theme === 'dark' ? 'text-gray-400 hover:text-white hover:bg-white/5' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'}`}>
+                  <span className="text-[10px] font-bold uppercase tracking-widest">Semi 4 Cav Auto Drop</span>
+                  <span className={`text-[9px] font-bold tracking-wider px-2 py-0.5 rounded-md ${theme === 'dark' ? 'bg-white/10 text-gray-300' : 'bg-gray-100 text-gray-600'}`}>2400 BPH</span>
+                </Link>
+                <Link to="/products/semi-auto-jar" className={`flex items-center justify-between px-5 py-2.5 pb-4 transition-colors ${theme === 'dark' ? 'text-gray-400 hover:text-white hover:bg-white/5' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'}`}>
+                  <span className="text-[10px] font-bold uppercase tracking-widest">Semi Auto Jar</span>
+                  <span className={`text-[9px] font-bold tracking-wider px-2 py-0.5 rounded-md ${theme === 'dark' ? 'bg-white/10 text-gray-300' : 'bg-gray-100 text-gray-600'}`}>1000 BPH</span>
+                </Link>
+
+              </div>
+            </div>
+          </div>
+
           <NavLink to="/compare" label="Compare" badge={compareIds.length} />
           <NavLink to="/services" label="Services" />
           <NavLink to="/contact" label="Contact" />

@@ -56,6 +56,17 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
+    cursor: default;
+}
+
+/* Interactive elements get the pointer */
+a, button, [role="button"], select, input[type="checkbox"], input[type="radio"] {
+    cursor: pointer;
+}
+
+/* Editable text areas still get the text cursor for UX */
+input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea {
+    cursor: text;
 }
 
 /* Mobile-first Container helper */
